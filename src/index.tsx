@@ -19,13 +19,16 @@ const taskList = [
 ];
 
 const container = document.getElementById('App');
+
 const rootElement = document.getElementById('root');
 const root = createRoot(rootElement);
 
-//const root = createRoot(); // createRoot(container!) if you use TypeScript
+//const root = createRoot(container!); // createRoot(container!) if you use TypeScript
+
 root.render(<App tasks={taskList} tab="home" />);
 
 //ReactDOM.render(<App Tasks={tasks}/>, document.getElementById('root'));
+
 registerServiceWorker();
 
 applyPolyfills().then(() => {
