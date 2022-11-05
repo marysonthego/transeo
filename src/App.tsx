@@ -1,26 +1,24 @@
-import React from 'react';
-import logo from './logo.svg';
+import {FC} from 'react';
 import './App.css';
+import {KanbanBoard} from './components/kanban-board/index';
+import 'h8k-components';
+import {Task} from './components/Task';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const title = "Kanban Board";
+
+export interface Props {
+  tasks: Task[];
+  tab?: string;
+}
+
+const App: FC<Props> =({tasks, tab}: Props) => {
+
+    return (
+      <div>
+        {/* <h8k-navbar header={title}></h8k-navbar> */}
+        <KanbanBoard tasks={tasks}/>
+      </div>
+    );
 }
 
 export default App;
