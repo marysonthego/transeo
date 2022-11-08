@@ -1,61 +1,66 @@
 import React, { useState } from "react";
-import "./index.css";
+//import "./index.css";
 import {Task} from '../Task';
 
 interface Props {
-tasks: Task[];
+Tasks: Task[];
 }
 
 export const KanbanBoard = (props: Props) => {
 
     // Each task is uniquely identified by its name.
     // Therefore, when you perform any operation on tasks, make sure you pick tasks by names (primary key) instead of any kind of index or any other attribute.
-    const [tasks, setTasks] = useState<Task[]>(props.tasks);
+    const [tasks, setTasks] = useState<Task[]>([]);
     const stagesNames = ['Backlog', 'To Do', 'Ongoing', 'Done'];
 
-  const handleForwardClick = (e) => {
-    let btn = e.target.current;
+  const handleForwardClick = (e : React.MouseEvent<HTMLButtonElement>) :void => {
+    // let btn = e.target.name;
+    // let value = e.target.value;
     console.log('Forward Click happened');
-    if( btn < 3)
-      e.target.current.stage--;
+    // if( value < 3)
+    //   btn.stage--;
     }
 
-  const handleBackClick = (e) => {
-    let btn = e.target.current;
+  const handleBackClick = (e: React.MouseEvent<HTMLButtonElement>) :void=> {
+    let btn = (e.target as HTMLButtonElement).name;
+    let value = (e.target as HTMLButtonElement).value;
     console.log('Back Click happened');
-    if(btn > 0)
-      e.target.current.stage++;
-    }
-
-    let stagesTasks = [];
-    for (let i = 0; i < stagesNames.length; ++i) {
-      stagesTasks.push([]);
-    }
+    console.log('btn: ', btn);
+    console.log('value', value);
+    // if(value > 0)
+    //   btn.stage++;
+    // }
+  }
+    const stagesTasks: Task[] = [];
+    // for (let i = 0; i < stagesNames.length; ++i) {
+    //   //stagesTasks.push(stage:i);
+    //   setTasks[...tasks, ]
+    // }
     for (let task of tasks) {
       const stageId = task.stage;
-      stagesTasks[stageId].push(task);
+      stagesTasks.push(task);
     }
 
-    return (
-      <div className="mt-20 layout-column justify-content-center align-items-center">
-        <div className="mt-50 layout-row">
-            {stagesTasks.map((tasks, i) => {
-                return (
-                    <div className="card outlined ml-20 mt-0" key={`${i}`}>
-                        <div className="card-text">
-                            <h4>{stagesNames[i]}</h4>
-                            <ul className="styled mt-50" data-testid={`stage-${i}`}>
-                                {tasks.map((task, index) => {
-                                    return <li className="slide-up-fade-in" key={`${i}${index}`}>
-                                      <div className="li-content layout-row justify-content-between align-items-center">
-                                        <span data-testid={`${task.name.split(' ').join('-')}-name`}>{task.name}</span>
-                                        <div className="icons">
-                                          <button className="icon-only x-small mx-2" data-testid={`${task.name.split(' ').join('-')}-back`} onClick={handleBackClick}>
-                                            <i className="material-icons">arrow_back</i>
 
+    return (
+      <div >
+        <div>
+            {stagesTasks.map((task, i) => {
+                return (
+                    <div key={`${i}`}>
+                        <div >
+                            <h4>{stagesNames[i]}</h4>
+                            <ul data-testid={`stage-${i}`}>
+                                {tasks.map((task: Task, index: number) => {
+                                    return <li  key={`${i}${index}`}>
+                                      <div >
+                                        <span data-testid={`${task.name.split(' ').join('-')}-name`}>{task.name}</span>
+                                        <div >
+                                          <button data-testid={`${task.name.split(' ').join('-')}-back`} onClick={handleBackClick}>
+                                            <i >arrow_back</i>
                                           </button>
-                                          <button className="icon-only x-small mx-2" data-testid={`${task.name.split(' ').join('-')}-forward`} onClick={handleForwardClick}>
-                                            <i className="material-icons">arrow_forward</i>
+                                          <button data-testid={`${task.name.split(' ').join('-')}-forward`} onClick={handleForwardClick}>
+                                            <i >arrow_forward</i>
                                           </button>
                                         </div>
                                       </div>

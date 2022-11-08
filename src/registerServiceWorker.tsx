@@ -30,7 +30,7 @@ export default function register() {
     }
 
     window.addEventListener('load', () => {
-      const swUrl = `${process.env.PUBLIC_URL}/service-worker.js`;
+      const swUrl: string = `${process.env.PUBLIC_URL}/service-worker.js`;
 
       if (isLocalhost) {
         // This is running on localhost. Lets check if a service worker still exists or not.
@@ -52,12 +52,12 @@ export default function register() {
   }
 }
 
-function registerValidSW(swUrl) {
+function registerValidSW(swUrl: string) {
   navigator.serviceWorker
     .register(swUrl)
     .then(registration => {
       registration.onupdatefound = () => {
-        const installingWorker = registration.installing;
+        const installingWorker: any = registration.installing;
         installingWorker.onstatechange = () => {
           if (installingWorker.state === 'installed') {
             if (navigator.serviceWorker.controller) {
@@ -81,16 +81,17 @@ function registerValidSW(swUrl) {
     });
 }
 
-function checkValidServiceWorker(swUrl) {
+function checkValidServiceWorker(swUrl: string) {
   // Check if the service worker can be found. If it can't reload the page.
   fetch(swUrl)
     .then(response => {
       // Ensure service worker exists, and that we really are getting a JS file.
       if (
         response.status === 404 ||
-        response.headers.get('content-type').indexOf('javascript') === -1
+        response?.headers?.get?.('content-type')?.indexOf('javascript') === -1
       ) {
         // No service worker found. Probably a different app. Reload the page.
+        console.log('service worker not found');
         navigator.serviceWorker.ready.then(registration => {
           registration.unregister().then(() => {
             window.location.reload();

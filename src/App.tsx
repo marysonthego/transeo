@@ -1,7 +1,6 @@
 import {FC} from 'react';
-import './App.css';
+//import './App.css';
 import {KanbanBoard} from './components/kanban-board/index';
-import 'h8k-components';
 import {Task} from './components/Task';
 
 const title = "Kanban Board";
@@ -15,8 +14,7 @@ const App: FC<Props> =({tasks, tab}: Props) => {
 
     return (
       <div>
-        {/* <h8k-navbar header={title}></h8k-navbar> */}
-        <KanbanBoard tasks={tasks}/>
+        <KanbanBoard Tasks={tasks}/>
       </div>
     );
 }
