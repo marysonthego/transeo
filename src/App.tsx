@@ -4,7 +4,7 @@ import {KanbanBoard} from './components/kanban-board/index';
 import 'h8k-components';
 import {Task} from './components/Task';
 
-const title = "Kanban Board";
+const title = "Mary's Kanban Board";
 
 export interface Props {
   tasks: Task[];
@@ -15,6 +15,7 @@ const App: FC<Props> =({tasks, tab}: Props) => {
 
     return (
       <div>
+        <h4>{title}</h4>
         <KanbanBoard tasks={tasks}/>
       </div>
     );

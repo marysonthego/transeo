@@ -4,6 +4,10 @@ var ___CSS_LOADER_API_IMPORT___ = require("../node_modules/css-loader/dist/runti
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
 exports.push([module.id, "", ""]);
-// Exports 
+// Exports
 module.exports = exports;
 */
+h4 {
+  display: flex;
+  justify-content: center;
+}

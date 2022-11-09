@@ -7,3 +7,32 @@ exports.push([module.id, ".card {\n    transition: height 0.5s ease-in-out;\n   
 // Exports
 module.exports = exports;
 */
+.card {
+  transition: height 0.5s ease-in-out;
+  will-change: height;
+}
+
+.card-text {
+  min-width: 236px;
+  min-height: 350px;
+}
+
+h4 {
+  display: flex;
+  justify-content: center;
+}
+
+ul {
+  padding-left: 0px;
+}
+
+.li-content {
+  height: 25px;
+}
+
+.column-layout {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-flow: column wrap;
+}

@@ -60,18 +60,18 @@ export const KanbanBoard = (props: Props) => {
   console.log(stagesTasks);
 
   return (
-    <div className="column-layout">
-      <div className="row-layout">
+    <div className="mt-20 layout-column justify-content-center align-items-cente">
+      <div className="mt-50 layout-row">
         {stagesTasks.map((tasks, i) => {
           return (
-            <div key={`${i}`} className="cartd outlined ml-20 mt-0">
+            <div key={`${i}`} className="card outlined ml-20 mt-0">
               <div className="card-text">
                 <h4>{stagesNames[i]}</h4>
-                <ul className="mt-50" data-testid={`stage-${i}`}>
+                <ul className="styled mt-50" data-testid={`stage-${i}`}>
                   {tasks.map((task: Task, index: number) => {
                     return (
                       <li className="slide-up-fade-in" key={`${i}${index}`}>
-                        <div className="li-content row-layout">
+                        <div className="li-content layout-row justify-content-between align-items-center">
                           <span
                             data-testid={`${task.name
                               .split(" ")
@@ -80,7 +80,7 @@ export const KanbanBoard = (props: Props) => {
                             {task.name}
                           </span>
                           <div className="icons">
-                            <button
+                            <button className="icon-only x-small mx-2"
                               data-testid={`${task.name
                                 .split(" ")
                                 .join("-")}-back`}
@@ -89,9 +89,9 @@ export const KanbanBoard = (props: Props) => {
                               data-taskname={`${task.name}`}
                               onClick={handleClick}
                             >
-                              <i>arrow_back</i>
+                              <i className="material-icons">arrow_back</i>
                             </button>
-                            <button
+                            <button className="icon-only x-small mx-2"
                               data-testid={`${task.name
                                 .split(" ")
                                 .join("-")}-forward`}
@@ -100,7 +100,7 @@ export const KanbanBoard = (props: Props) => {
                                 data-taskname={`${task.name}`}
                               onClick={handleClick}
                             >
-                              <i>arrow_forward</i>
+                              <i className="material-icons">arrow_forward</i>
                             </button>
                           </div>
                         </div>

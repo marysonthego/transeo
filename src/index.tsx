@@ -1,5 +1,6 @@
 import React from 'react';
 import {createRoot} from 'react-dom/client';
+import 'material-icons/iconfont/material-icons.css';
 import './index.css';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
