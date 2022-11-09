@@ -30,7 +30,6 @@ export const KanbanBoard = (props: Props) => {
     let direction: string = e.currentTarget.dataset.direction!;
     console.log("direction: ", direction);
 
-    let task: Task = {name: taskname, stage: currentstage};
     let nextTasks: Task[] = [];
 
     nextTasks = tasks.map((task:Task) => {
