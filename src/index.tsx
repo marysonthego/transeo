@@ -1,8 +1,8 @@
 import React from 'react';
 import {createRoot} from 'react-dom/client';
-//import './index.css';
+import './index.css';
 import App from './App';
-//import registerServiceWorker from './registerServiceWorker';
+import registerServiceWorker from './registerServiceWorker';
 
 const taskList = [
     { name: 'task 0', stage: 0 },
@@ -21,4 +21,4 @@ const root = createRoot(document.getElementById('root') as Element);
 console.log('root: ', root); // ???
 root.render(<App tasks={taskList} tab="home" />);
 
-//registerServiceWorker();
+registerServiceWorker();
