@@ -1,5 +1,5 @@
 import React, { MouseEvent, useState } from "react";
-import "./index.css";
+import "../../my-index.css";
 import { Task } from "../Task";
 
 interface Props {
@@ -59,13 +59,13 @@ export const KanbanBoard = (props: Props) => {
   console.log(stagesTasks);
 
   return (
-    <div className="mt-20 layout-column justify-content-center align-items-cente">
+    <div className="mt-20 grid-columns justify-content-center align-items-center">
       <div className="mt-50 layout-row">
         {stagesTasks.map((tasks, i) => {
           return (
             <div key={`${i}`} className="card outlined ml-20 mt-0">
               <div className="card-text">
-                <h4>{stagesNames[i]}</h4>
+                <h4 className="text-center">{stagesNames[i]}</h4>
                 <ul className="styled mt-50" data-testid={`stage-${i}`}>
                   {tasks.map((task: Task, index: number) => {
                     return (

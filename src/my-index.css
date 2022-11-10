@@ -1,48 +1,69 @@
+/* // Imports
+var ___CSS_LOADER_API_IMPORT___ = require("../node_modules/css-loader/dist/runtime/api.js");
+var ___CSS_LOADER_AT_RULE_IMPORT_0___ = require("-!../node_modules/css-loader/dist/cjs.js??ref--6-oneOf-3-1!../node_modules/postcss-loader/src/index.js??postcss!../node_modules/h8k-design/dist/index.css");
+exports = ___CSS_LOADER_API_IMPORT___(false);
+exports.i(___CSS_LOADER_AT_RULE_IMPORT_0___);
+// Module
+exports.push([module.id, "\n", ""]);
+// Exports
+module.exports = exports;
+*/
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;1,400&display=swap");
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
-  padding: 0; }
+  padding: 0;
+  min-height: calc(100vh);
+  font-family: var(--font-family-sans-serif);
+  background: var(--app-background);
+}
 
 /* You can add global styles to this file, and also import other style files */
 :root {
   --brand-color: #1ba94c;
-  --brand-rgb: 27, 169, 76;
+  --brand-rgb: rgb(27, 169, 76);
   --brand-hover: #22d560;
   --brand-dark: #147d38;
   --brand-disabled: #ccf7db;
   --brand-box-shadow: rgba(27, 169, 76, 0.5);
   --brand-box-shadow-hover: rgba(27, 169, 76, 0.4);
   --primary-color: #1ba94c;
-  --primary-rgb: 27, 169, 76;
+  --primary-rgb: rgb(27, 169, 76);
   --primary-hover: #22d560;
   --primary-dark: #147d38;
   --primary-disabled: #ccf7db;
   --primary-box-shadow: rgba(27, 169, 76, 0.5);
   --primary-box-shadow-hover: rgba(27, 169, 76, 0.4);
   --secondary-color: #097bbf;
-  --secondary-rgb: 9, 123, 191;
+  --secondary-rgb: rgb(9, 123, 191);
   --secondary-hover: #0b9af0;
   --secondary-dark: #075c8e;
   --secondary-disabled: #caeafd;
   --secondary-box-shadow: rgba(9, 123, 191, 0.5);
   --secondary-box-shadow-hover: rgba(9, 123, 191, 0.4);
   --error-color: #a93c32;
-  --error-rgb: 169, 60, 50;
+  --error-rgb: rgb(169, 60, 50);
   --error-hover: #c85146;
   --error-dark: #822e26;
   --error-disabled: #f7e5e3;
   --error-box-shadow: rgba(169, 60, 50, 0.5);
   --error-box-shadow-hover: rgba(169, 60, 50, 0.4);
   --success-color: #22a97a;
-  --success-rgb: 34, 169, 122;
+  --success-rgb: rgb(34, 169, 122);
   --success-hover: #2bd399;
   --success-dark: #197f5b;
   --success-disabled: #d4f6ea;
   --success-box-shadow: rgba(34, 169, 122, 0.5);
   --success-box-shadow-hover: rgba(34, 169, 122, 0.4);
   --disabled-color: #6EA989;
-  --app-background: linear-gradient(to bottom, #fff 0%, #f3f7f7 100%);
+  --app-background: linear-gradient(to bottom, #fff 0%, #b7c9cc 100%);
   --font-family-sans-serif: 'Open Sans', sans-serif;
   --heading-color: #3a424e;
   --link-color: #5fa6ff;
@@ -55,8 +76,14 @@ body {
   --card-hover-shadow-color: rgba(99, 118, 129, 0.5);
   --card-margin-gutter: 0px; }
 
-body {
-  font-family: var(--font-family-sans-serif) !important; }
+  /* Grid
+  // ================================================ */
+  .grid-columns {
+    display: grid;
+    gap: 1em;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+
+  }
 
 /* Flexbox
 // ================================================== */
@@ -1620,10 +1647,6 @@ h1 {
 .caption {
   font-size: 14px; }
 
-body {
-  background: var(--app-background);
-  min-height: calc(100vh); }
-
 .app-title {
   color: var(--primary-color); }
 
@@ -1931,7 +1954,8 @@ a {
     border: thin solid rgba(var(--primary-rgb), 0.1);
     box-shadow: none; }
   .card .card-text {
-    padding: 1em; }
+    padding: 1em;
+    justify-content: center;}
   .card .card-actions {
     padding: 1em 0.8em;
     display: flex;
@@ -2063,7 +2087,7 @@ ul.styled, ol.styled {
     min-width: 200px;
     padding: 8px 12px 8px 24px;
     margin: 16px 0;
-    box-shadow: 0 4px 12px #eaeaea; }
+    box-shadow: 0 4px 12px #eaeaea;}
 
 ul.bordered li, ol.bordered li {
   border-bottom: 1px solid #eeeeee; }
@@ -2075,7 +2099,7 @@ ul.inset li, ol.inset li {
   padding-right: 16px; }
 
 ul.styled {
-  list-style-type: none; }
+  list-style-type: none;}
 
 table {
   width: 100%;

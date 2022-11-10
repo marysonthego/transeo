@@ -1,7 +1,7 @@
 import React from 'react';
 import {createRoot} from 'react-dom/client';
 import 'material-icons/iconfont/material-icons.css';
-import './index.css';
+import './my-index.css';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 
@@ -19,7 +19,7 @@ const taskList = [
 ];
 
 const root = createRoot(document.getElementById('root') as Element);
-console.log('root: ', root); // ???
+console.log('root: ', root); 
 root.render(<App tasks={taskList} tab="home" />);
 
 registerServiceWorker();

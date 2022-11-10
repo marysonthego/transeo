@@ -7,7 +7,3 @@ exports.push([module.id, "", ""]);
 // Exports
 module.exports = exports;
 */
-h4 {
-  display: flex;
-  justify-content: center;
-}

@@ -15,7 +15,7 @@ const App: FC<Props> =({tasks, tab}: Props) => {
 
     return (
       <div>
-        <h4>{title}</h4>
+        <h4 className="text-center">{title}</h4>
         <KanbanBoard tasks={tasks}/>
       </div>
     );
